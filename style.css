@@ -2,11 +2,11 @@
 
 /* 基本色 */
 :root {
-	--main-color: #5D9AB2;
+	--main-color: rgb(202, 168, 136);
 	--accent-color: rgb(13, 77, 97);
 	--header-font-color:rgb(22, 187, 16);
 	--dark-main-color: #2B5566;
-	--text-bright-color: #FfF;
+	--text-bright-color: rgb(255, 255, 255);
 	--header-newfont-color: #000;
 	--icon-color: #fff;
 	--icon-bk-color: #ddd;
@@ -122,17 +122,24 @@ body {
 
 
 
-/* コンテンツB： 概要（アイコン＋テキスト） */
+/* コンテンツB： 概要（長めの画像＋テキスト） */
 .conB .container {
-	padding-top: 80px;
-	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
+.conB {
+	background-image: url(conBbackground.jpg);
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	color: var(--text-bright-color);
+}
+
+
 .conB .text {
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 60px;
-	text-align: center;
+	padding: 20px;
+	
+	background-color: rgba(70, 70, 70, 0.788);
 }
 
 .conB h2 {
@@ -150,44 +157,55 @@ body {
 }
 
 .conB a {
-	color: #5D9AB2;
-	color: var(--main-color);
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 30px;
+	box-shadow: 0 0 0 1px #888;
+	border: solid 3px currentColor;
+	border-radius: 6px;
+	background-color: rgba(65, 65, 65, 0.534);
+	background-color: var(--accent-color);
+	color: #fff;
+	color:#fff;
+	font-size: 14px;
 	text-decoration: none;
 }
 
 .conB a:hover	{
-	text-decoration: underline;
+	background-image: linear-gradient(
+		rgba(255,255,255,0.2),
+		rgba(255,255,255,0.2)
+	);
 }
 
-.conB .icon	{
-	display: inline-block;
-	margin-bottom: 20px;
-	font-size: 40px;
-	width: 2em;
-	line-height: 2em;
-	border-radius: 50%;
-	text-align: center;
-	background-color: #ddd;
-	background-color: var(--icon-bk-color);
-	color: #fff;
-	color: var(--icon-color);
+.conB .photo {
+	min-height: 200px;
+	background-image: none;
+	background-position: center;
+	background-size: cover;
 }
 
 @media (min-width: 768px) {
 	.conB .container {
 		display: flex;
+		flex-direction: row-reverse;
 		max-width: 1000px;
 		max-width: var(--large-width);
 		margin-left: auto;
 		margin-right: auto;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 
-	.conB .text	{
+	.conB .photo {
+		flex: 0 0 400px;
+	}
+
+	.conB .text {
 		flex: 1;
+		padding: 50px;
 	}
 }
-
-
 
 /* コンテンツC： 概要（画像＋テキスト） */
 .conC {
@@ -266,7 +284,7 @@ body {
 
 /* コンテンツD： 概要（画像＋テキスト：逆配置） */
 .conD .container {
-	padding-top: 2px;
+	padding-top: 20px;
 }
 
 .conD .text {
@@ -904,24 +922,20 @@ header {
 	}
 }
 
-
 /* 記事一覧C */
 .listC h1 {
 	text-align: center;
 }
-
 .listC .container {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: none;
 	margin: 2px auto;
 }
-
 .listC article {
 	flex: 1 1 250px;
 	display: flex;
 }
-
 .listC a {
 	position: relative;
 	flex: 1;
@@ -933,18 +947,15 @@ header {
 	color: inherit;
 	text-decoration: none;
 }
-
 .listC a:hover {
 	opacity: 0.8;
 }
-
 .listC .photo {
 	min-height: 250px;
 	background-position: center;
 	background-size: cover;
 	opacity: 0.6;
 }
-
 .listC .text {
 	position: absolute;
 	bottom: 0;
@@ -953,43 +964,20 @@ header {
 	color: #fff;
 	color: var(--text-bright-color);
 }
-
 .listC h2 {
 	margin: 0;
 	font-size: 18px;
 }
-
 .listC p {
 	margin: 0;
 	font-size: 14px;
 	opacity: 0.8;
 }
-
 @media (min-width: 1000px) {
 	.listC article {
 		flex: 1 1 25%;
 	}
 }
-
-/* アレンジ: ヘッダーの色 */
-.head-color {
-	background-color: #5D9AB2;
-	background-color: var(--main-color);
-	color: #fff;
-	color: var(--text-bright-color);
-}
-
-.head-color .headA {
-	background-color: transparent;
-	color: inherit;
-}
-
-.head-color .headC {
-	color: inherit;
-}
-
-
-
 /* アレンジ: ヘッダーとヒーローイメージを一体化 */
 .head-hero {
 	background-color: transparent;
