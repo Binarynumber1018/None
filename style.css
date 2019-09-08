@@ -562,6 +562,9 @@ footer .container {
 	text-decoration: none;
 }
 
+.footA a:hover {
+	background-color: rgba(0,0,0,0.3);
+}
 
 /* フッターB： フッターメニュー */
 .footB div {
@@ -616,6 +619,14 @@ footer .container {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.footC a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.footC a:hover {
+	background-color:  rgba(0,0,0,0.3);
+}
 
 /* フッターD： SNSメニュー */
 .footD {
@@ -646,7 +657,19 @@ footer .container {
 .footD a:hover {
 	background-color: rgba(0,0,0,0.3);
 }
-
+.footD b {
+	display: block;
+	margin-right: 8px;
+	padding: 0;
+	color: inherit;
+	font-size: 16px;
+	text-decoration: none;
+	border: solid 1px currentColor;
+	width: 2em;
+	line-height: 2em;
+	border-radius: 50%;
+	text-align: center;
+}
 
 /* ヘッダー */
 header {
